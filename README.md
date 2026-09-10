@@ -1,8 +1,25 @@
 # Sari Spa
 
-Website for Sari Spa, built as a modern single-page React application. This
-repository currently contains the initialized project scaffold — the real site
-content is added on top of it.
+Marketing website for **Sari Spa** — a calm, premium spa and wellness space in
+GRA Phase 3, Port Harcourt (inside Atlantis Hotels & Apartments). It's a
+modern, mobile-first single-page React site built to convert visitors into
+bookings, with every call-to-action routing to WhatsApp.
+
+**Highlights**
+
+- Conversion-focused: a persistent "Book on WhatsApp" CTA, per-service WhatsApp
+  buttons with pre-filled messages, a floating button and a mobile sticky bar,
+  all using `https://wa.me/2347072795537`.
+- Restrained, editorial design — warm ivory/charcoal palette with sophisticated
+  purple accents that complement the real photography, Fraunces + Inter type,
+  and subtle scroll reveals that respect `prefers-reduced-motion`.
+- Uses the business's own photography (`src/assets/`) — no stock imagery.
+- Honest content only: real guest reviews and confirmed offerings; no invented
+  prices, hours, staff, awards or services.
+- Fully responsive, accessible (semantic HTML, keyboard focus states), and
+  SEO-ready (title, meta description, Open Graph).
+- Content lives in [`src/data/site.js`](src/data/site.js) and the WhatsApp
+  number/messages in [`src/lib/whatsapp.js`](src/lib/whatsapp.js) for easy editing.
 
 ## Tech stack
 
@@ -19,14 +36,16 @@ Deployed on **[Vercel](https://vercel.com/)** (zero-config: Vite is detected aut
 
 ```
 sari-spa/
-├── public/              # Static assets served as-is (favicon, etc.)
+├── public/              # Static assets served as-is (favicon, OG image)
 ├── src/
-│   ├── assets/          # Images, fonts, SVGs imported by components
-│   ├── components/      # Reusable UI building blocks (Header, Footer, Button…)
-│   ├── sections/        # Page sections composed from components (Hero…)
+│   ├── assets/          # Real Sari Spa photography (imported by data/site.js)
+│   ├── components/      # Reusable UI (Navbar, ServiceCard, WhatsAppButton…)
+│   ├── sections/        # Page sections (Hero, Treatments, Testimonials…)
+│   ├── data/site.js     # All site content: services, reviews, imagery, contact
+│   ├── lib/whatsapp.js  # WhatsApp number + deep-link / message helpers
 │   ├── App.jsx          # Root component / page layout
 │   ├── main.jsx         # App entry point
-│   └── index.css        # Tailwind import + global base styles
+│   └── index.css        # Tailwind theme tokens + global base styles
 ├── index.html           # HTML entry point
 ├── vite.config.js       # Vite + React + Tailwind config
 └── eslint.config.js     # ESLint config
